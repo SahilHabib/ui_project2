@@ -2,8 +2,34 @@
 <html>
     <head>
         <title>sample</title>
+        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
     </head>
-    <body>
-        what the duce
+    <body ng-app="appName">
+        testing angular app
+        <div ng-controller="appCtrl">
+     <h1>one way data binding</h1>
+            <h3>{{::habib}}</h3>
+            <h1> two way data binding </h1>
+            <h3>{{habib}}</h3>
+            <button class="btn btn-primary" ng-click="change()"> submit </button>
+            <br>
+            <h1> Form elements </h1>
+            <input type="text" ng-model="formModal">
+            {{formModal}}
+            <button class="btn btn-danger" ng-click="displayPerson()">appCtrl</button>
+        </div>
+        
+        <div ng-controller="personCtrl">
+            <h3> test for personservice in person controller</h3>
+            <button class="btn btn-success" ng-click="initialize()"> personCtrl</button>
+        </div>
     </body>
+    <script type="text/javascript" src="/node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="/script.js/app.js"></script>
+    <script type="text/javascript"
+    src="/script.js/controllers/appCtrl.js"></script>
+    <script type="text/javascript"
+    src="/script.js/services/personService.js"></script>
+    <script type="text/javascript"
+    src="/script.js/controllers/personCtrl.js"></script>
 </html>
