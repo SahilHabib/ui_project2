@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+    <head>
+        <title>angular app</title>
+
+        <link rel="stylesheet"
+        href="/node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+    <body ng-app="appName">
+      
+        <div ng-controller="contactListCtrl">
+        <contact-list-form></contact-list-form>
+        <contact-list-update updateid="updateId" contactlist="contactlist"></contact-list-update>
+        <contact-list-table></contact-list-table>
+<!--    <div ng-include="'/views/contactListForm.html'"></div>-->
+
+    
+        
+<!--
+        <table class="table table-striped">
+        <caption> results</caption>
+        
+        <tr>
+            <th> first name</th>
+            <th> last name</th>
+            <th> address</th>
+            <th> phone</th>
+        </tr>
+        <tr ng-repeat="x in contactList">
+            <td>{{x.firstName}}</td>
+            <td>{{x.lastName}}</td>
+            <td>{{x.address}}</td>
+            <td>{{x.phone}}</td>
+            
+            </tr>
+    </table>
+-->
+        <h1> results</h1>
+        <ol>
+        <li ng-repeat="x in contactList">{{x.firstName}}</li>    
+    </ol>
+        </div>
+        by element
+        <contact-list-form></contact-list-form>
+        by attribute
+        <div contact-list-form></div>
+        by comment
+        <!-- <span contact-->
+        by class
+        <span class="contact-list-form"></span>
+</body>
+    <script type="text/javascript"
+    src="/node_modules/angular/angular.js">
+</script>
+    <script type="text/javascript" src="/script.js/app.js">
+</script>
+    <script type="text/javascript"
+    src="/script.js/controllers/appCtrl.js">
+</script>
+    <script type="text/javascript"
+    src="/script.js/services/personService.js">
+</script>
+    <script type="text/javascript"
+    src="/script.js/controllers/personCtrl.js">
+</script>
+    <script type="text/javascript"
+    src="/script.js/controllers/contactListCtrl.js">
+</script>
+    <script type="text/javascript"
+    src="/script.js/services/personFactory.js">
+</script>
+    <script type="text/javascript"
+    src="/script.js/directives/contactListForm.js"></script>
+    <script type="text/javascript"
+    src="/script.js/services/personHttp.js">
+</script>
+<!--
+    <script type="text/javascript"
+    src="/script.js/controllers/contactListCtrlArray.js"></script>
+-->
+    <script type="text/javascript"
+    src="/script.js/directives/contactListTable.js">
+    </script>
+    <script type="text/javascript"
+    src="/script.js/directives/contactListFormEdit.js"></script>
+            
+        
+            
+        
+        
+    
+    
+</html>
