@@ -1,0 +1,29 @@
+<table class="table table-striped">
+    <caption>
+    results
+<input style="float:right;margin-right:20px"
+type="text" ng-model="searchMd"
+placeholder="search...">
+    </caption>
+
+<tr>
+            <th> first name</th>
+            <th> last name</th>
+            <th> address</th>
+            <th> phone</th>
+            <th> email </th>
+            <th> </th>
+        </tr>
+        <tr ng-repeat="x in contactList|filter:(searchMd)|orderBy:['lastName','firstName']:true">
+            <td>{{x.firstName}}</td>
+            <td>{{x.lastName}}</td>
+            <td>{{x.address}}</td>
+            <td>{{x.phoneNumber}}</td>
+            <td>{{x.email}}</td>
+            <td>
+                <button class="btn btn-primary" ng-click="update(x.contactId)">update</button>
+                <button class="btn btn-danger"ng-click="delete(x.contactId)">delete</button>
+            </td>
+            
+            </tr>
+    </table>
